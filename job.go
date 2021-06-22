@@ -26,34 +26,34 @@ func (j *Job) Get(key string) (val interface{}, ok bool) {
 	return val, ok
 }
 
-func (j *Job) GetString(key string) (val string, ok bool) {
-	val, ok = j.Vals[key].(string)
-	return val, ok
+func (j *Job) GetString(key string) string {
+	val, _ := j.Vals[key].(string)
+	return val
 }
 
-func (j *Job) GetInt(key string) (val int, ok bool) {
-	val, ok = j.Vals[key].(int)
-	return val, ok
+func (j *Job) GetInt(key string) int {
+	val, _ := j.Vals[key].(int)
+	return val
 }
 
-func (j *Job) GetBool(key string) (val bool, ok bool) {
-	val, ok = j.Vals[key].(bool)
-	return val, ok
+func (j *Job) GetBool(key string) bool {
+	val, _ := j.Vals[key].(bool)
+	return val
 }
 
-func (j *Job) GetFloat(key string) (val float64, ok bool) {
-	val, ok = j.Vals[key].(float64)
-	return val, ok
+func (j *Job) GetFloat(key string) float64 {
+	val, _ := j.Vals[key].(float64)
+	return val
 }
 
-func (j *Job) GetDuration(key string) (val time.Duration, ok bool) {
-	val, ok = j.Vals[key].(time.Duration)
-	return val, ok
+func (j *Job) GetDuration(key string) time.Duration {
+	val, _ := j.Vals[key].(time.Duration)
+	return val
 }
 
-func (j *Job) GetTime(key string) (val time.Time, ok bool) {
-	val, ok = j.Vals[key].(time.Time)
-	return val, ok
+func (j *Job) GetTime(key string) time.Time {
+	val, _ := j.Vals[key].(time.Time)
+	return val
 }
 
 func init() {
