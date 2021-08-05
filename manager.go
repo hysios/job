@@ -79,7 +79,7 @@ func (manager *Manager) runJobs() {
 				manager.ClearJob(job)
 			}
 		case t := <-time.After(manager.Interval):
-			log.Infof("run check %s", t)
+			log.Debugf("run check %s", t)
 			manager.jobs.Range(func(key interface{}, val interface{}) bool {
 				if job, ok := val.(*Job); ok {
 					if job.StartAt.Add(manager.MaxRetryTimeout).Before(t) {
@@ -89,7 +89,7 @@ func (manager *Manager) runJobs() {
 					}
 
 					if job.Fn == nil {
-						log.Info("job callback is empty")
+						log.Infof("job callback is empty")
 						manager.ClearJob(job)
 						return true
 					}
