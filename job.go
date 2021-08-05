@@ -31,6 +31,11 @@ func (j *Job) GetString(key string) string {
 	return val
 }
 
+func (j *Job) GetBytes(key string) []byte {
+	val, _ := j.Vals[key].([]byte)
+	return val
+}
+
 func (j *Job) GetInt(key string) int {
 	val, _ := j.Vals[key].(int)
 	return val
